@@ -1,7 +1,7 @@
 function shuffle(arr) {
   if (!Array.isArray(arr) || arr.length < 2) return arr
 
-  for (let i = arr.length - 1; arr > 1; i--) {
+  for (let i = arr.length - 1; i > 1; i--) {
     const j = Math.floor(Math.random() * i) // create num < i
 
     let temp = arr[i]
@@ -27,9 +27,11 @@ export const getRandomColorPairs = (count) => {
     colorList.push(color)
   }
 
-  // double colorList and shuffle
+  // double current color list
   const fullColorList = [...colorList, ...colorList]
+
+  // shuffle it
   shuffle(fullColorList)
 
-  return colorList
+  return fullColorList
 }
